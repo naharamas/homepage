@@ -24,7 +24,9 @@ $(document).ready(function(){
 	$('#searchForm').submit(function(){
 		$('#header').slideUp();
 		$('#searchForm').css('paddingTop', '20px');
-        googleSearch();
+        //googleSearch();
+		var query = $('#searchBar').val();
+		window.open("https://www.google.com/search?q="+query,"_self");
 		return false;
 	});
 	
