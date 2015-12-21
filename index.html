@@ -125,17 +125,19 @@
 				<h1><a href="http://www.xkcd.com/" class="bracket">xkcd</a></h1>
 				<div id="xkcd"></div>
 			</div>
-			
+			<!-- XKCD What-If is considered dead. -->
+			<!--
 			<div class="d4x2" id="whatifContainer">
 				<h1><a href="http://what-if.xkcd.com/" class="bracket">What If?</a></h1>
 				<div id="whatif"></div>
 			</div>
-			
+			-->
 			<div class="d4x2" id="prequelContainer">
 				<h1><a href="http://www.prequeladventure.com/" class="bracket">PREQUEL</a></h1>
 				<div id="prequel"></div>
 				<div id="prequelDate"></div>
 			</div>
+			
 		</div>
 		
 		<div id="bottom-margin"></div>
@@ -165,17 +167,6 @@
 			if ( hour >= 18 || hour < 3 ) {
 				document.getElementById("titletext").innerHTML = "こんばんは!";
 			}
-			
-			// I hate CORS
-			/*var invocation = new XMLHttpRequest();
-			var url = 'http://whatthecommit.com/index.txt';
-			invocation.open('GET', url, true);
-		    invocation.setRequestHeader('Access-Control-Allow-Headers', '*');
-			invocation.setRequestHeader('Access-Control-Allow-Origin', '*');
-			invocation.onload = function() {
-				document.getElementById("titletext").innerHTML = invocation.responseText;
-			}
-			invocation.send(null);*/
 			
 			// Generate Chrome tab color metatags.
 			var colorBrightness;
