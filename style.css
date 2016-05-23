@@ -31,17 +31,11 @@ li, ul{
 
 p { 
 	color: #FFF;
-	transition: color 2s;
 }
 
 a {
 	color: #FFF;
-	transition: color 2s;
 	text-decoration: none;
-}
-
-h1 {
-	margin: 0.67em;
 }
 
 .bracket:active,
@@ -75,11 +69,12 @@ h1 {
 }
 
 h1 {
+    margin: 0.67em;
 	white-space: nowrap;
 	color: #FFF;
 	font-weight: normal;
-	transition: color 2s;
 }
+
 
 .center {
 	width: 800px;
@@ -353,10 +348,11 @@ p.notFound{
 
 #whatifContainer:hover a {
 	color: #000;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 }
 
-#xkcdContainer, #whatifContainer, #prequelContainer, #prequelDate{
+#xkcdContainer, #whatifContainer, #prequelContainer,
+#prequelDate, #whatifDate, #xkcdDate{
 	display: none;
 }
 
@@ -371,7 +367,6 @@ p.notFound{
 #xkcdContainer, #whatifContainer{
 	text-align: center;
 }
-
 
 #whatifContainer:hover{
 	background-color: rgba(255, 255, 255, 1);
@@ -389,6 +384,13 @@ p.notFound{
 
 #whatif{
 	font-family: Georgia;
+}
+
+#whatifContainer p, #prequelContainer p,
+#whatifContainer h1, #prequelContainer h1,
+#whatifContainer a, #prequelContainer a
+ {
+	transition: color 2s;
 }
 
 #whatifContainer:hover h1 a{
