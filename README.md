@@ -2,7 +2,7 @@ Homepage
 =================
 
 ![alt tag](screenshots/preview4.png "Homepage preview - desktop")
-* [Preview - search](screenshots/preview4search.png)
+* ~~[Preview - search](screenshots/preview4search.png)~~
 * [Preview - mobile](screenshots/phone_preview3.png)
 * [Preview - mobile Chrome tabs](screenshots/phone_preview3tabs.png)
 
@@ -17,6 +17,7 @@ Features:
 * Time-dependent Chrome tab color
 * Blurrable background
 * Todo-notes (saved with JavaScript cookies)
-* In-Page Google Search results (taken from somebodies "homepagedark" example)
+* ~~In-Page Google Search results (taken from somebodies "homepagedark" example)~~
+ * Stopped working since API is disfunctional. Search removed for now.
 
 Live at [http://e66666666.github.io/homepage/](http://e66666666.github.io/homepage/)
