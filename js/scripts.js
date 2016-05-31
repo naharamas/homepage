@@ -75,9 +75,9 @@ $(window).load(function(){
 	}
 	
 	// Change NOS links from desktop to mobile
-	$("a[href^='http://feeds.nos.nl']").each(function() { 
+	/*$("a[href^='http://feeds.nos.nl']").each(function() { 
 		this.href = this.href.replace(/^http:\/\/feeds\.nos\.nl\/(.*)\//, "http://m.nos.nl/artikel/");
-	});
+	});*/
 
 	// XKCD content, WhatIf content
 	if (day == 1 || day == 3 || day == 5) {
