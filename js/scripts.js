@@ -261,11 +261,12 @@ function getAverageRGB(imgEl) {
     width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
     
     context.drawImage(imgEl, 0, 0);
-    
+        
     try {
         data = context.getImageData(0, 0, width, height);
     } catch(e) {
-        /* security error, img on diff domain *///alert('x');
+        /* security error, img on diff domain */
+        //alert('Does not work.');
         return defaultRGB;
     }
     
