@@ -336,6 +336,10 @@ p.notFound{
 	transition: background-color 1s;
 }
 
+#whatif .itemTitle {
+    display: none;
+}
+
 #whatifContainer a{
 	text-decoration: none;
 	color: #fff;
