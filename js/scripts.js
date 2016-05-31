@@ -28,6 +28,20 @@ $('#prequelDate').FeedEk( {
 	ShowPubDate : true,
 	DateFormat: 'YYYY/MM/DD',
 });
+$("#whatifDate").FeedEk( {
+    FeedUrl : 'http://what-if.xkcd.com/feed.atom',
+	MaxCount : 1,
+	ShowDesc : false,
+	ShowPubDate : true,
+	DateFormat: 'YYYY/MM/DD',
+});
+$('#xkcdDate').FeedEk( {
+    FeedUrl : 'https://xkcd.com/atom.xml',
+	MaxCount : 1,
+	ShowDesc : false,
+	ShowPubDate : true,
+	DateFormat: 'YYYY/MM/DD',
+});
 
 function populateTodo() {
     	// Populate todo box
@@ -48,6 +62,7 @@ function updateDate() {
     currentdate = date.getDate();
 }
 
+// I'm so not going to refactor this.
 $(window).load(function(){
     populateTodo();
     updateDate();
@@ -58,7 +73,22 @@ $(window).load(function(){
     var prequelYear = parseInt(prequelRegex[0], 10);
 	var prequelMonth = parseInt(prequelRegex[1], 10);
 	var prequelDay = parseInt(prequelRegex[2], 10);
-	
+    //window.alert("Prequel\nDay: " + prequelDay + "\nMonth: " + prequelMonth);
+    
+    var xkcdDate_raw = document.querySelector('#xkcdDate').querySelector('.itemDate').innerHTML;
+	var xkcdRegex = xkcdDate_raw.match(/(\d+)/g);
+    var xkcdYear = parseInt(xkcdRegex[0], 10);
+	var xkcdMonth = parseInt(xkcdRegex[1], 10);
+	var xkcdDay = parseInt(xkcdRegex[2], 10);
+    //window.alert("XKCD\nDay: " + xkcdDay + "\nMonth: " + xkcdMonth);    
+    
+    var whatifDate_raw = document.querySelector('#whatifDate').querySelector('.itemDate').innerHTML;
+	var whatifRegex = whatifDate_raw.match(/(\d+)/g);
+    var whatifYear = parseInt(whatifRegex[0], 10);
+	var whatifMonth = parseInt(whatifRegex[1], 10);
+	var whatifDay = parseInt(whatifRegex[2], 10);
+    //window.alert("What If\nDay: " + whatifDay + "\nMonth: " + whatifMonth);
+    
 	if ((prequelMonth == currentmonth) && (currentdate >= prequelDay) && (currentdate <= prequelDay+2)) {
 		document.getElementById("prequelContainer").style.display="inline";
 		$('#prequel').FeedEk( {
@@ -92,7 +122,7 @@ $(window).load(function(){
 	});*/
 
 	// XKCD content, WhatIf content
-	if (day == 1 || day == 3 || day == 5) {
+	if (currentmonth == xkcdMonth && currentdate == xkcdDay) {
 		$('#xkcd').FeedEk( {
 			FeedUrl : 'https://xkcd.com/atom.xml',
 			MaxCount : 1,
@@ -101,7 +131,7 @@ $(window).load(function(){
 		});
 		document.getElementById("xkcdContainer").style.display="inline";
 	}
-	if (day == 2 || day == 3) {
+	if (currentmonth == whatifMonth && (currentdate == whatifDay || currentdate == whatifDay+1)) {
 		$("#whatif").FeedEk( {
 			FeedUrl : 'http://what-if.xkcd.com/feed.atom',
 			MaxCount : 1,
