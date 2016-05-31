@@ -504,8 +504,8 @@ p.notFound{
 	}
     
     #title {
-		line-height: 80px !important; 
-		height: 80px !important;
+		line-height: 80px; 
+		height: 80px;
 	}
 	
 	/*#title {
