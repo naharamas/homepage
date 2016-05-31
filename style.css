@@ -4,16 +4,6 @@
  */
  
 /*
- *	Font
- */
-@font-face {
-	font-family: 'YutaCoco';
-	src: url(YutaCoco-Demi-Bold.ttf) format('truetype');
-	font-weight: normal;
-    font-style: normal;
-}
-
-/*
  *	Sort of reset and general styling
  */
 * {
@@ -22,7 +12,8 @@
 }
 
 body {
-	font: 10pt "Open Sans", "Segoe UI", "Verdana", "Arial";
+    font-family: 'Roboto', sans-serif;
+    font-size: 10pt;
 }
 
 li, ul{
@@ -146,7 +137,7 @@ h1 {
  */ 
 #title{
 	word-break: break-all;
-	font: 32pt "YutaCoco", "Open Sans", "Segoe UI", "Verdana", "Arial";
+    font-size: 32pt;
 	text-align: center;
 	color: rgba(255, 255, 255, 1);
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
@@ -315,7 +306,8 @@ p.notFound{
 	border: 0px;
 	resize: none;
 	text-align: center;
-	font: 10pt "Open Sans", "Segoe UI", "Verdana", "Arial";
+    font-family: 'Roboto', sans-serif;
+    font-size: 10pt;
 }
 
 .d4x2 {
@@ -352,7 +344,6 @@ p.notFound{
 
 #whatifContainer:hover a {
 	color: #000;
-	/* text-decoration: underline; */
 }
 
 #xkcdContainer, #whatifContainer, #prequelContainer,
@@ -413,7 +404,6 @@ p.notFound{
     margin-top: 10px;
 	width: auto;
 	font-size: 22pt;
-	font-family: Leelawadee, arial;
 	color: rgba(255, 255, 255, 1);
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
 }
