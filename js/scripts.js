@@ -163,6 +163,7 @@ function toggleVisibility(id1, id2) {
 	var show = document.getElementById(id2);
 	hide.style.height = '0px';
 	hide.style.overflow = 'hidden';
+    
 	if (wide.matches){
 		show.style.height = '130px';
 	}

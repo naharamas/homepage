@@ -416,6 +416,16 @@ p.notFound{
 /*
  *	Responsive!
  */
+
+@media screen and (min-width: 840px){
+    #title {
+		line-height: 130px;
+		height: 130px;
+	}
+    
+    
+}
+ 
 @media screen and (max-width: 840px){
 	html {
 		font-size: 12pt;
@@ -444,15 +454,13 @@ p.notFound{
 		line-height: 24px;
 	}
 		
-	#weather {
+	#weather, #weather2 {
 		font-size: 12pt;
 		width: auto;
 		float: left;
 	}
 	
 	#weather2 {
-		font-size: 12pt;
-		width: auto;
 		float: right;
 	}
 	
@@ -494,12 +502,17 @@ p.notFound{
 		width: 98%;
 		border-style: none;
 	}
+    
+    #title {
+		line-height: 80px !important; 
+		height: 80px !important;
+	}
 	
-	#title {
+	/*#title {
 		height: 80px !important;
 	}
 	
 	#weatherContainer {
 		display: none !important;
-	}
+	}*/
 }
