@@ -29,16 +29,27 @@ $('#prequelDate').FeedEk( {
 	DateFormat: 'YYYY/MM/DD',
 });
 
+function populateTodo() {
+    	// Populate todo box
+	var todo = localStorage.getItem("todo"); 
+	document.getElementById('todobox').innerHTML = todo;
+}
+
 // Determine current date
 var date = new Date();
 var day = date.getDay();
 var currentmonth = parseInt(date.getMonth()+1,10);
 var currentdate = date.getDate();
 
+function updateDate() {
+    date = new Date();
+    day = date.getDay();
+    currentmonth = parseInt(date.getMonth()+1,10);
+    currentdate = date.getDate();
+}
+
 $(window).load(function(){
-	// Populate todo box
-	var todo = localStorage.getItem("todo"); 
-	document.getElementById('todobox').innerHTML = todo;
+    populateTodo();
     updateDate();
 	
 	// Display Prequel after an update
