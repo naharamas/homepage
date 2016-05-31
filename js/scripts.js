@@ -21,8 +21,6 @@ $('#nu').FeedEk( {
 	ShowPubDate : false,
 	TitleLinkTarget:'_self',
 });
-// Load the date for Prequel
-// NOPE
 $('#prequelDate').FeedEk( {
 	FeedUrl: 'http://www.prequeladventure.com/feed/',
 	MaxCount : 1,
@@ -91,8 +89,6 @@ $(window).load(function(){
 		});
 		document.getElementById("xkcdContainer").style.display="inline";
 	}
-	// WhatIf has died
-	/*
 	if (day == 2 || day == 3) {
 		$("#whatif").FeedEk( {
 			FeedUrl : 'http://what-if.xkcd.com/feed.atom',
@@ -116,7 +112,6 @@ $(window).load(function(){
 			var doCheck = window.setInterval(checkForItemContent, 250);
 		});
 	}
-	*/
 });
 
 // Header title/weather panel switching
