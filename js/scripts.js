@@ -26,8 +26,7 @@ $('#prequelDate').FeedEk( {
 	MaxCount : 1,
 	ShowDesc : false,
 	ShowPubDate : true,
-	DateFormat: 'MM/DD/YYYY',
-	DateFormatLang:'en',
+	DateFormat: 'YYYY/MM/DD',
 });
 
 // Determine current date
@@ -40,14 +39,16 @@ $(window).load(function(){
 	// Populate todo box
 	var todo = localStorage.getItem("todo"); 
 	document.getElementById('todobox').innerHTML = todo;
+    updateDate();
 	
 	// Display Prequel after an update
-	var prequelDate_raw = document.querySelector(".itemDate").innerHTML;
-	var regex = prequelDate_raw.match(/(\d+)/g);
-	var regexdate = parseInt(regex[0], 10);
-	var regexmonth = parseInt(regex[1], 10);
-	//window.alert(prequelDate_raw + "\n" + regexdate + " " + regexmonth);
-	if ((regexmonth == currentmonth) && (currentdate >= regexdate) && (currentdate <= regexdate+2)) {
+    var prequelDate_raw = document.querySelector('#prequelDate').querySelector('.itemDate').innerHTML;
+	var prequelRegex = prequelDate_raw.match(/(\d+)/g);
+    var prequelYear = parseInt(prequelRegex[0], 10);
+	var prequelMonth = parseInt(prequelRegex[1], 10);
+	var prequelDay = parseInt(prequelRegex[2], 10);
+	
+	if ((prequelMonth == currentmonth) && (currentdate >= prequelDay) && (currentdate <= prequelDay+2)) {
 		document.getElementById("prequelContainer").style.display="inline";
 		$('#prequel').FeedEk( {
 			FeedUrl: 'http://www.prequeladventure.com/feed/',
