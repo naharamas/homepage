@@ -260,6 +260,8 @@ function getAverageRGB(imgEl) {
     height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
     width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
     
+    height = height / 10;
+    
     context.drawImage(imgEl, 0, 0);
         
     try {
