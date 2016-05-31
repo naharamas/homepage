@@ -143,7 +143,7 @@ h1 {
 
 /*
  *	Header styling
- */
+ */ 
 #title{
 	word-break: break-all;
 	font: 32pt "YutaCoco", "Open Sans", "Segoe UI", "Verdana", "Arial";
@@ -410,6 +410,7 @@ p.notFound{
 
 #weather, #weather2{
 	display: inline-block;
+    margin-top: 10px;
 	width: auto;
 	font-size: 22pt;
 	font-family: Leelawadee, arial;
@@ -419,6 +420,7 @@ p.notFound{
 
 #weather2{
 	float: right;
+    margin-right: 5px;
 }
 
 /*
