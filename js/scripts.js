@@ -131,7 +131,7 @@ $(window).load(function(){
 		});
 		document.getElementById("xkcdContainer").style.display="inline";
 	}
-	if (currentmonth == whatifMonth && (currentdate == whatifDay || currentdate == whatifDay+1)) {
+	if (currentmonth == whatifMonth && (currentdate == whatifDay || currentdate == whatifDay)) {
 		$("#whatif").FeedEk( {
 			FeedUrl : 'http://what-if.xkcd.com/feed.atom',
 			MaxCount : 1,
@@ -180,10 +180,10 @@ function loadWeather() {
 			html = '<p>'+weather.city+'<br />';
 			html += weather.temp+'&deg;'+weather.units.temp+'<br />';
 			html += weather.currently+'</p>';
-			$("#weather2").html(html);
+			$("#weather").html(html);
 		},
 		error: function(error) {
-			$("#weather2").html('<p>'+error+'</p>');
+			$("#weather").html('<p>'+error+'</p>');
 		}
 	});
 	
@@ -191,25 +191,24 @@ function loadWeather() {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			loadWeatherPos(position.coords.latitude+','+position.coords.longitude);
 		});
+        
+        function loadWeatherPos(location, woeid) {
+            $.simpleWeather({
+                location: location,
+                woeid: woeid,
+                unit: 'c',
+                success: function(weather) {
+                    html = '<p>'+weather.city+'<br />';
+                    html += weather.temp+'&deg;'+weather.units.temp+'<br />';
+                    html += weather.currently+'</p>';
+                    $("#weather2").html(html);
+                },
+                error: function(error) {
+                $("#weather2").html('<p>'+error+'</p>');
+                }
+            });
+        }
 	}
-	
-	function loadWeatherPos(location, woeid) {
-		$.simpleWeather({
-			location: location,
-			woeid: woeid,
-			unit: 'c',
-			success: function(weather) {
-				html = '<p>'+weather.city+'<br />';
-				html += weather.temp+'&deg;'+weather.units.temp+'<br />';
-				html += weather.currently+'</p>';
-				$("#weather").html(html);
-			},
-			error: function(error) {
-			$("#weather").html('<p>'+error+'</p>');
-			}
-		});
-	}
-	
 }
 
 // Blur the background, works on Gecko and WebKit browsers.
