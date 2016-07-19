@@ -131,7 +131,10 @@ $(window).load(function(){
 		});
 		document.getElementById("xkcdContainer").style.display="inline";
 	}
-    window.alert(currentdate + "\n" + whatifDay);
+    window.alert(
+    currentmonth + "-" + currentdate + "\n" +
+    whatifMonth + "-" + whatifDay + "\n" +
+    (currentdate <= whatifDay ? "Show" : "Hide"));
 	if (currentmonth == whatifMonth && currentdate <= whatifDay) {
 		$("#whatif").FeedEk( {
 			FeedUrl : 'http://what-if.xkcd.com/feed.atom',
