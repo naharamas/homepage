@@ -175,6 +175,7 @@
             image.id = "bgimg";
             image.src = bgpath;
             
+            // Chrome color
             var rgb;
             image.onload = function() {
                         rgb = getAverageRGB(image);
@@ -183,6 +184,17 @@
                         meta.content = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
                         document.getElementsByTagName('head')[0].appendChild(meta);
             }
+            
+            // Header title
+			if ( hour >= 3 && hour < 10 ) {
+				document.getElementById("titletext").innerHTML = "おはようございます!";
+			}
+			if ( hour >= 10 && hour < 18 ) {
+				document.getElementById("titletext").innerHTML = "こんにちは!";
+			}
+			if ( hour >= 18 || hour < 3 ) {
+				document.getElementById("titletext").innerHTML = "こんばんは!";
+			}
         </script>
         
         <!--
