@@ -175,6 +175,7 @@ h1 {
 }
 
 .searchBar {
+	max-width: 95%;
 	font-size: 32pt;
 	text-align: center;
 	border-style: solid;
@@ -529,6 +530,14 @@ h1 {
     #title {
 		line-height: 80px; 
 		height: 80px;
+	}
+
+	.searchBar {
+		font-size: 16pt;
+	}
+
+	.searchView {
+		max-height: 20pt !important;
 	}
 	
 	/*#title {
