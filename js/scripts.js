@@ -36,7 +36,7 @@ $("#whatifDate").FeedEk( {
 	DateFormat: 'YYYY/MM/DD',
 });
 $('#xkcdDate').FeedEk( {
-    FeedUrl : 'https://xkcd.com/atom.xml',
+    FeedUrl : 'http://xkcd.com/rss.xml',
 	MaxCount : 1,
 	ShowDesc : false,
 	ShowPubDate : true,
