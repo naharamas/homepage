@@ -303,7 +303,7 @@ function selectSearch(searchNr) {
 			$(".search_2").removeClass("searchView");
 			$("#dot_1").removeClass("current");
 			$("#dot_2").removeClass("current");
-			$(".search_0_i").focus();
+			//$(".search_0_i").focus();
 			break;
 		case 1:
 			$(".search_1").addClass("searchView");
@@ -313,7 +313,7 @@ function selectSearch(searchNr) {
 			$(".search_2").removeClass("searchView");
 			$("#dot_0").removeClass("current");
 			$("#dot_2").removeClass("current");
-			$(".search_1_i").focus();
+			//$(".search_1_i").focus();
 			break;
 		case 2:
 			$(".search_2").addClass("searchView");
@@ -323,7 +323,7 @@ function selectSearch(searchNr) {
 			$(".search_0").removeClass("searchView");
 			$("#dot_1").removeClass("current");
 			$("#dot_0").removeClass("current");
-			$(".search_2_i").focus();
+			//$(".search_2_i").focus();
 			break;
 	}
 }
