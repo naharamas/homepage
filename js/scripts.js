@@ -124,7 +124,7 @@ $(window).load(function(){
 	// XKCD content, WhatIf content
 	if (currentmonth == xkcdMonth && currentdate == xkcdDay) {
 		$('#xkcd').FeedEk( {
-			FeedUrl : 'https://xkcd.com/atom.xml',
+			FeedUrl : 'https://xkcd.com/rss.xml',
 			MaxCount : 1,
 			ShowPubDate : false,
 			TitleLinkTarget:'_self',
