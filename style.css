@@ -194,7 +194,7 @@ h1 {
 }
 
 .searchView {
-	height: 32pt !important;
+	height: 32pt;
 }
 
 /*
@@ -542,12 +542,4 @@ h1 {
 	.searchView {
 		height: 20pt !important;
 	}
-	
-	/*#title {
-		height: 80px !important;
-	}
-	
-	#weatherContainer {
-		display: none !important;
-	}*/
 }
