@@ -412,9 +412,3 @@ function getAverageRGB(imgEl) {
     
     return rgb;
 }
-
-jQuery(window).resize("resizeBackground");
-function resizeBackground() {
-    $(".bg").height(jQuery(window).height() + 60);
-}
-resizeBackground();
