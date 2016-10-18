@@ -9,6 +9,7 @@
         var def = $.extend({
             MaxCount: 5,
             ShowDesc: true,
+            ShowEnc: false,
             ShowPubDate: true,
             DescCharacterLimit: 0,
             TitleLinkTarget: "_blank",
@@ -56,6 +57,16 @@
                         }
                         else {
                             s += itm.channel.item.description;
+                         }
+                         s += '</div>';
+                    }
+                    if (def.ShowEnc) {
+                        s += '<div class="itemContent">';
+                         if (def.DescCharacterLimit > 0 && itm.channel.item.encoded.length > def.DescCharacterLimit) {
+                            s += itm.channel.item.encoded.substring(0, def.DescCharacterLimit) + '...';
+                        }
+                        else {
+                            s += itm.channel.item.encoded;
                          }
                          s += '</div>';
                     }
