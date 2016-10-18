@@ -92,28 +92,28 @@ $(window).load(function(){
 	if ((prequelMonth == currentmonth) && (currentdate >= prequelDay) && (currentdate <= prequelDay+2)) {
 		document.getElementById("prequelContainer").style.display="inline";
 		$('#prequel').FeedEk( {
-			FeedUrl: 'http://www.prequeladventure.com/feed/',
+			FeedUrl: 'http://ftr.fivefilters.org/makefulltextfeed.php?url=http://www.prequeladventure.com/feed/', // I am a terrible person.
 			MaxCount : 1,
 			ShowDesc : true,
 			ShowPubDate : false,
 			TitleLinkTarget:'_self',
 		});
 		
-		// Point fetched images to absolute address instead of relative, broken address
-		$(document).ready(function () {
-			var itemContentPresent = false;
-			function checkForItemContent() {
-				itemContentPresent = ($('.itemContent').length > 0) ? true : false;
-				if (itemContentPresent) {
-					$('#prequel').find('img').each(function() {
-						var newSrc = 'http://www.prequeladventure.com' + $(this).attr('src');
-						$(this).attr('src', newSrc);
-					});
-					window.clearInterval(doCheck); 
-				}
-			}
-			var doCheck = window.setInterval(checkForItemContent, 250);
-		});
+		//Point fetched images to absolute address instead of relative, broken address
+		// $(document).ready(function () {
+		// 	var itemContentPresent = false;
+		// 	function checkForItemContent() {
+		// 		itemContentPresent = ($('.itemContent').length > 0) ? true : false;
+		// 		if (itemContentPresent) {
+		// 			$('#prequel').find('img').each(function() {
+		// 				var newSrc = 'http://www.prequeladventure.com' + $(this).attr('src');
+		// 				$(this).attr('src', newSrc);
+		// 			});
+		// 			window.clearInterval(doCheck); 
+		// 		}
+		// 	}
+		// 	var doCheck = window.setInterval(checkForItemContent, 250);
+		// });
 	}
 	
 	// Change NOS links from desktop to mobile
