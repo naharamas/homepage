@@ -272,7 +272,7 @@ h1 {
 	text-align: center;
 	height: 190px;
 	width: 190px;
-	margin: 4px;
+	margin: 5px;
 	float: left;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -280,6 +280,7 @@ h1 {
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
 } 
 
 .d1x1:hover {
@@ -294,11 +295,12 @@ h1 {
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.5);
 	text-align: center;
-	margin: 4px;
+	margin: 5px;
 	transition: background-color 2s;
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
 }
 
 .d2x1:hover {
@@ -342,11 +344,12 @@ h1 {
 	height: 100%;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.5);
-	margin: 4px;
+	margin: 5px;
 	transition: background-color 2s;
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
 }
 
 .d4x2:hover {
@@ -507,14 +510,12 @@ h1 {
 		float: left;
 		overflow: hidden;
 		transition: background-color 2s;
-		border-style: none;
 	} 
 	
 	
 	.d2x1 {
 		margin: 1%;
 		width: 98%;
-		border-style: none;
 	}
 	
 	.d2x1Child {
@@ -526,7 +527,6 @@ h1 {
 	.d4x2 {
 		margin: 1%;
 		width: 98%;
-		border-style: none;
 	}
     
     #title {
@@ -535,11 +535,12 @@ h1 {
 	}
 
 	.searchBar {
+		height: 20pt;
 		font-size: 16pt;
 	}
 
 	.searchView {
-		max-height: 20pt !important;
+		height: 20pt !important;
 	}
 	
 	/*#title {
