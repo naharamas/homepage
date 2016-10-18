@@ -137,6 +137,8 @@ $(window).load(function(){
 			MaxCount : 1,
 			ShowPubDate : false,
 			TitleLinkTarget:'_self',
+			ShowDesc : false,
+			ShowEnc : true
 		});
 		document.getElementById("whatifContainer").style.display="inline";
 		$(document).ready(function () {
