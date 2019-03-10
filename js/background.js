@@ -47,8 +47,8 @@ function toggleBlur(){
 	location.reload();
 }
 if (localStorage.blur=="true") {
-	document.getElementById('bg').style.filter = 'url(img/blur.svg#blur)';
-	document.getElementById('bg').style.WebkitFilter = 'url(img/blur.svg#blur)';
+	document.getElementById('bg').style.filter = 'url(#blur)';
+	document.getElementById('bg').style.WebkitFilter = 'url(#blur)';
 }
 
 selectRandomBackground();
