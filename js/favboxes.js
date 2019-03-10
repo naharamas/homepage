@@ -56,7 +56,7 @@ function editOn() {
     sortable('.sortable', {
         connectWith: 'fav-connected',
         items: ':not(.noSort)',
-        placeholder: '<li style="border: 1px solid #fff;"> </li>',
+        placeholder: '<li style="border: 1px solid #fff;">Drop</li>',
         forcePlaceholderSize: true
     });
     editMode = true;

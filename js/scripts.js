@@ -32,7 +32,7 @@ $(window).on("load", function(){
 			if (dlcExists) {
 				$('#dlc .feedEkList li .itemTitle a').each(function (i) {
 					var n = $(this)[0].href.split('/')[3];
-					$('#dlc .feedEkList li:nth-child('+(i+1)+') .itemContent').html("<a href='http://www.darklegacycomics.com/"+n+"' rel='bookmark'><img width='100%' src='http://www.darklegacycomics.com/comics/"+n+".jpg' alt=''></a>");
+					$('#dlc .feedEkList li:nth-child('+(i+1)+') .itemContent').html("<a href='https://www.darklegacycomics.com/"+n+"' rel='bookmark'><img width='100%' src='https://www.darklegacycomics.com/comics/"+n+".jpg' alt=''></a>");
 				});
 				document.getElementById("dlcContainer").style.display="inline";
 			}
