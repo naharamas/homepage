@@ -1,6 +1,6 @@
 /*! FeedEk jQuery RSS/ATOM Feed Plugin v3.1.1+
 * https://jquery-plugins.net/FeedEk/FeedEk.html  https://github.com/enginkizil/FeedEk
-* Author : Engin KIZIL, edited by Naharamas(added options) */
+* Author : Engin KIZIL, edited by Naharamas(added options + removed dependency from third-party service) */
 
 (function ($) {
 	$.fn.FeedEk = function (opt) {
@@ -20,21 +20,26 @@
 		var id = $(this).attr("id"), s = "";
 		$("#" + id).empty();
 		if (def.FeedUrl == undefined) return;
-		$("#" + id).append('<img src="loader.gif" />');
+		$("#" + id).append('<img src="img/loader.gif" />');
 		$.ajax({
-			url: "https://feed.jquery-plugins.net/load?url=" + encodeURIComponent(def.FeedUrl) + "&maxCount=" + def.MaxCount + "&dateCulture=" + def.DateFormatLang + "&dateFormat=" + def.DateFormat,
-			dataType: "json",
+			url: encodeURI(proxyUrl+def.FeedUrl),
+			dataType: "text",
 			success: function (result) {
+				var feed = new Feed(result);
 				$("#" + id).empty();
-				if (result.data == null)
-					return;
+
+				if (feed==null || feed.items==null || feed.items.length==0)
+					return;				
 
 				if(def.OldestFirst) {
-					var t = result.data.reverse();
-					result.data = t;
+					var t = feed.items.reverse();
+					feed.items = t;
 				}
 
-				$.each(result.data, function (e, itm) {
+				$.each(feed.items, function (e, itm) {
+					if(def.MaxCount>0 && e==def.MaxCount) {
+						return false;
+					}
 					var dt = moment(itm.publishDate);
 					if(def.OldestFirst==true && def.MaxDaysLate>0 && dt.isBefore(moment().subtract(def.MaxDaysLate, 'days'))) {
 						return;
