@@ -4,7 +4,7 @@
  */
 
 $(window).on("load", function(){
-	$('#indiemag').FeedEX( {
+	$('#indiemag').FeedEk( {
 		FeedUrl : 'https://www.indiemag.fr/feed/rss.xml',
 		MaxCount : 15,
 		ShowDesc : false,
@@ -12,7 +12,7 @@ $(window).on("load", function(){
 		DateFormat: 'HH:mm | DD/MM',
 		TitleLinkTarget:'_self'
 	});
-	$('#gorafi').FeedEX( {
+	$('#gorafi').FeedEk( {
 		FeedUrl : 'http://www.legorafi.fr/feed/',
 		MaxCount : 15,
 		ShowDesc : false,
@@ -21,7 +21,7 @@ $(window).on("load", function(){
 		TitleLinkTarget:'_self'
 	}); 
 
-	$('#dlc').FeedEX( {
+	$('#dlc').FeedEk( {
 		FeedUrl : 'http://www.darklegacycomics.com/feed.xml',
 		MaxCount : 3,
 		MaxDaysLate : 15,
@@ -39,7 +39,7 @@ $(window).on("load", function(){
 		}
 	});
 
-	$('#xkcd').FeedEX( {
+	$('#xkcd').FeedEk( {
 		FeedUrl : 'https://www.xkcd.com/rss.xml',
 		MaxCount : 1,
 		MaxDaysLate : 2,
