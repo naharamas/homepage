@@ -2,6 +2,9 @@ if (typeof(Storage) !== "undefined") {
 	if (localStorage.getItem("theme") == null) {
 		localStorage.theme = defaultTheme;
 	}
+	if (localStorage.getItem("blur") == null) {
+		localStorage.blur = false;
+	}
 }
 
 var currentBG = 1;
@@ -33,6 +36,19 @@ for (i = 0; i < themesList.length; i++) {
 function changeTheme() {
 	localStorage.theme = $(".themeSelector option:selected").val();
 	selectRandomBackground();
+}
+
+function toggleBlur(){
+	if ( localStorage.blur!=true ) {
+		localStorage.blur=true;
+	} else {
+		localStorage.blur=false;
+	}
+	location.reload();
+}
+if (localStorage.blur == true) {
+	document.getElementById('bg').style.filter = 'url(img/blur.svg#blur)';
+	document.getElementById('bg').style.WebkitFilter = 'url(img/blur.svg#blur)';
 }
 
 selectRandomBackground();

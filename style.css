@@ -144,7 +144,7 @@ div.d2x1Child a:hover
 	top: 0;
 }
 
-.nextBG, .cacheButton {
+.nextBG, .blurButton {
 	float:left;
 	width: 20px;
 	height: 20px;
@@ -155,7 +155,11 @@ div.d2x1Child a:hover
 	transition: 0.2s ease-out;
 	cursor: pointer;
 }
-.nextBG:hover, .cacheButton:hover {
+.blurButton {
+	width: auto;
+	color: white;
+}
+.nextBG:hover, .blurButton:hover {
 	background-color: rgba(192,192,192,0.33);
 	transition: 0.2s ease-in;
 }
