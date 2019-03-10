@@ -23,8 +23,8 @@ $(window).on("load", function(){
 
 	$('#dlc').FeedEk( {
 		FeedUrl : 'http://www.darklegacycomics.com/feed.xml',
-		MaxCount : 3,
-		MaxDaysLate : 15,
+		MaxCount : 2,
+		MaxDaysLate : 3,
 		ShowPubDate : true,
 		DateFormat: 'YYYY/MM/DD',
 		Callback: function() {
