@@ -3,7 +3,7 @@ if (typeof(Storage) !== "undefined") {
 		localStorage.theme = defaultTheme;
 	}
 	if (localStorage.getItem("blur") == null) {
-		localStorage.blur = false;
+		localStorage.blur = "false";
 	}
 }
 
@@ -39,14 +39,14 @@ function changeTheme() {
 }
 
 function toggleBlur(){
-	if ( localStorage.blur!=true ) {
-		localStorage.blur=true;
+	if ( localStorage.blur!="true" ) {
+		localStorage.blur="true";
 	} else {
-		localStorage.blur=false;
+		localStorage.blur="false";
 	}
 	location.reload();
 }
-if (localStorage.blur == true) {
+if (localStorage.blur=="true") {
 	document.getElementById('bg').style.filter = 'url(img/blur.svg#blur)';
 	document.getElementById('bg').style.WebkitFilter = 'url(img/blur.svg#blur)';
 }
