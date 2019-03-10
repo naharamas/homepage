@@ -156,12 +156,17 @@ div.d2x1Child a:hover
 	cursor: pointer;
 }
 .blurButton {
+	padding: 2px;
 	width: auto;
-	color: white;
+	font-size: 16px;
+	color: transparent;
 }
 .nextBG:hover, .blurButton:hover {
 	background-color: rgba(192,192,192,0.33);
 	transition: 0.2s ease-in;
+}
+.blurButton:hover {
+	color: #eee;
 }
 
 .themeSelector {
@@ -177,7 +182,7 @@ div.d2x1Child a:hover
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-image: none; /* remove the value that chrome dose not use */
+	background-image: none; /* remove the value that chrome does not use */
 	transition: 0.2s ease-out;
 	cursor: pointer;
 }
