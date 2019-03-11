@@ -26,7 +26,6 @@
 			dataType: "text",
 			success: function (result) {
 				var feed = new Feed(result);
-				$("#" + id).empty();
 
 				if (feed==null || feed.items==null || feed.items.length==0)
 					return;				
@@ -71,7 +70,8 @@
 						s += '</div>';
 					}
 				});
-
+				
+				$("#" + id).empty();
 				$("#" + id).append('<ul class="feedEkList">' + s + '</ul>');
 				def.Callback(id);
 			}

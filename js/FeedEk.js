@@ -25,7 +25,6 @@
 			url: "https://feed.jquery-plugins.net/load?url=" + encodeURIComponent(def.FeedUrl) + "&maxCount=" + def.MaxCount + "&dateCulture=" + def.DateFormatLang + "&dateFormat=" + def.DateFormat,
 			dataType: "json",
 			success: function (result) {
-				$("#" + id).empty();
 				if (result.data == null)
 					return;
 
@@ -66,7 +65,8 @@
 						s += '</div>';
 					}
 				});
-
+				
+				$("#" + id).empty();
 				$("#" + id).append('<ul class="feedEkList">' + s + '</ul>');
 				def.Callback(id);
 			}
