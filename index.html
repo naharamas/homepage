@@ -17,7 +17,7 @@
 	<script src="js/moment-with-locales.min.js"></script>
 	<script src="js/rss.js"></script>
 	<!-- Replace FeedEk.js by FeedEX.js to use a local proxy(or whatever you set up in vars.js) instead of a third-party service -->
-	<script src="js/FeedEk.js"></script> 
+	<script src="js/FeedEk.js"></script>
 	<script src="js/jquery.simplerWeather.min.js"></script>
 	<script src="js/suncalc.js"></script>
 </head>
@@ -25,7 +25,8 @@
 <body onresize="sizeCheck();">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none">
 		<filter id="blur">
-			<feGaussianBlur stdDeviation="5" />
+			<!-- You can increase stdDeviation to get a bigger blur effect. -->
+			<feGaussianBlur stdDeviation="5" /> 
 			<feComponentTransfer>
 				<feFuncA type="discrete" tableValues="1 1"/>
 			</feComponentTransfer>
@@ -40,7 +41,7 @@
         <button class="blurButton" style="cursor: pointer;" onclick="toggleBlur();">blur</p>
 	</div>
 	
-	<div class="center">
+	<div id="center">
 		<div id="header">
 			<div class="top" id="weatherContainer" onclick="toggleVisibility('weatherContainer', 'title');" style="cursor: pointer;">
 				<div id="weather"></div>
@@ -103,26 +104,6 @@
 		<div class="d1x1" id="favbox6">
 			<h1 class="bracket"></h1>
 			<ul class="sortable fav-connected"></ul>
-		</div>
-
-		<div class="d2x1">
-			<h1> <a href="https://www.indiemag.fr/" class="bracket">IndieMag</a></h1>
-			<div class="d2x1Child" id="indiemag"></div>
-		</div>
-
-		<div class="d2x1">
-			<h1><a href="http://www.legorafi.fr/" class="bracket">Le Gorafi</a></h1>
-			<div class="d2x1Child" id="gorafi"></div>
-		</div>
-
-		<div class="d4x2" id="xkcdContainer">
-			<h1><a href="http://www.xkcd.com/" class="bracket">xkcd</a></h1>
-			<div id="xkcd"></div>
-		</div>
-
-		<div class="d4x2" id="dlcContainer">
-			<h1><a href="http://www.darklegacycomics.com" class="bracket">Dark Legacy Comics</a></h1>
-			<div id="dlc"></div>
 		</div>
 	</div>
 

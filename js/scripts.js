@@ -4,54 +4,22 @@
  */
 
 $(window).on("load", function(){
-	$('#indiemag').FeedEk( {
-		FeedUrl : 'https://www.indiemag.fr/feed/rss.xml',
-		MaxCount : 15,
-		ShowDesc : false,
-		ShowPubDate : true,
-		DateFormat: 'HH:mm | DD/MM',
-		TitleLinkTarget:'_self'
-	});
-	$('#gorafi').FeedEk( {
-		FeedUrl : 'http://www.legorafi.fr/feed/',
-		MaxCount : 15,
-		ShowDesc : false,
-		ShowPubDate : true,
-		DateFormat: 'HH:mm | DD/MM',
-		TitleLinkTarget:'_self'
-	}); 
+	for (var key in newsFeeds) {
+		$('#center').append('<div class="d2x1 newsFeed"><h1><a href="'+newsFeeds[key].SiteUrl+'" class="bracket">'+newsFeeds[key].Title+'</a></h1><div class="d2x1Child newsFeedContent" id="'+key+'"></div></div>');
+		$('#'+key).FeedEk( {
+			FeedUrl : newsFeeds[key].FeedUrl,
+			MaxCount : 15,
+			ShowDesc : false,
+			ShowPubDate : true,
+			DateFormat: 'HH:mm | DD/MM',
+			TitleLinkTarget:'_self'
+		});
+	}
 
-	$('#dlc').FeedEk( {
-		FeedUrl : 'http://www.darklegacycomics.com/feed.xml',
-		MaxCount : 2,
-		MaxDaysLate : 3,
-		ShowPubDate : true,
-		DateFormat: 'YYYY/MM/DD',
-		Callback: function() {
-			var dlcExists = $('#dlc .feedEkList li').length;
-			if (dlcExists) {
-				$('#dlc .feedEkList li .itemTitle a').each(function (i) {
-					var n = $(this)[0].href.split('/')[3];
-					$('#dlc .feedEkList li:nth-child('+(i+1)+') .itemContent').html("<a href='https://www.darklegacycomics.com/"+n+"' rel='bookmark'><img width='100%' src='https://www.darklegacycomics.com/comics/"+n+".jpg' alt=''></a>");
-				});
-				document.getElementById("dlcContainer").style.display="inline";
-			}
-		}
-	});
-
-	$('#xkcd').FeedEk( {
-		FeedUrl : 'https://www.xkcd.com/rss.xml',
-		MaxCount : 1,
-		MaxDaysLate : 2,
-		ShowPubDate : true,
-		DateFormat: 'YYYY/MM/DD',
-		Callback: function() {
-			var xkcdExists = $('#xkcd .feedEkList li').length;
-			if (xkcdExists) {
-				document.getElementById("xkcdContainer").style.display="inline";
-			}
-		}
-	});
+	for (var key in bigFeeds) {
+		$('#center').append('<div class="d4x2 bigFeed"><h1><a href="'+bigFeeds[key].SiteUrl+'" class="bracket">'+bigFeeds[key].Title+'</a></h1><div class="d4x2Child bigFeedContent" id="'+key+'"></div></div>');
+		$('#'+key).FeedEk( bigFeeds[key].FeedEkOptions );
+	}
 });
 
 function sizeCheck() {

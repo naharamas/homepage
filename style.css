@@ -105,33 +105,23 @@ div.d2x1Child a:hover
 	top: 0;
 }
 
-.editButton {
+.editButton, .resetButton {
 	float:right;
-	width: 20px;
-	height: 20px;
+	width: 22px;
+	height: 22px;
 	margin-top: 5px;
 	margin-right: 5px;
 	background: transparent;
 	border: 0px solid #ccc;
 	transition: 0.2s ease-out;
 	cursor: pointer;
+}
+.resetButton {
+	color: white;
 }
 .editButton:hover {
 	background-color: rgba(192,192,192,0.33);
 	transition: 0.2s ease-in;
-}
-
-.resetButton {
-	float:right;
-	width: 20px;
-	height: 20px;
-	margin-top: 5px;
-	margin-right: 5px;
-	background: transparent;
-	border: 0px solid #ccc;
-	transition: 0.2s ease-out;
-	cursor: pointer;
-	color: white;
 }
 .resetButton:hover {
 	background-color: rgba(255,128,128,0.66);
@@ -146,8 +136,8 @@ div.d2x1Child a:hover
 
 .nextBG, .blurButton {
 	float:left;
-	width: 20px;
-	height: 20px;
+	width: 22px;
+	height: 22px;
 	margin-top: 5px;
 	margin-left: 5px;
 	background: transparent;
@@ -230,7 +220,7 @@ h1 {
 	font-weight: normal;
 }
 
-.center {
+#center {
 	width: 800px;
 	margin: 0 auto;
 }
@@ -484,16 +474,14 @@ div.d2x1Child .itemDate {
 	transition: background-color 1s;
 }
 
-#xkcdContainer, #dlcContainer {
+.bigFeed {
 	display: none;
 	text-align: center;
 }
-
-#xkcd, #dlc {
+.bigFeedContent {
 	margin: 2%;
 }
-
-#xkcd .itemDate, #dlc .itemDate {
+.bigFeedContent .itemDate {
 	display: none;
 }
 

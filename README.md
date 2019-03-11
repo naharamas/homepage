@@ -7,7 +7,7 @@ Updated APIs after YQL stopped working.
 Now using Dark Sky for weather. Note that since Dark Sky needs an API key it won't work on the demo.
 For RSS feeds the demo is using an enhanced version of the latest release of FeedEk(3.1.1 at  this time), restoring some options that disappeared. Otherwise I'm using a local proxy to get the feeds through CORS policy and then I process them using a modified FeedEk. Both are used in the exact same way, you just need to change the linked script in the html.
 
-Most configuration is made in vars.js. Changing feeds still require editing HTML/CSS and JS though. 
+Most configuration is made in vars.js. 
 
 Links can be edited live now. There's a hidden button in the top-right corner that put the page in edit mode, it uses drag&drop to move and get rid of links. To close edit mode just press the button again. 
 

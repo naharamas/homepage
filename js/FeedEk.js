@@ -68,7 +68,7 @@
 				});
 
 				$("#" + id).append('<ul class="feedEkList">' + s + '</ul>');
-				def.Callback();
+				def.Callback(id);
 			}
 		});
 	};
