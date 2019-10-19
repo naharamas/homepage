@@ -1,117 +1,72 @@
+var currentSearch = 0;
+var maxSearch = searchEngineList.length-1;
+
+for (var i=0; i < searchEngineList.length; i++) {
+	$('#searchFormContainer').append('<form class="searchForm search_'+i+'" method="get" action="'+searchEngineList[i].url+'"><input class="searchBar search_'+i+'_i '+searchEngineList[i].name+'" type="text" name="'+searchEngineList[i].fieldname+'" placeholder="'+searchEngineList[i].name_capitalized+'" search_/></form>');
+	$('#searchDotList').append('<li id="dot_'+i+'" onclick="selectSearch('+i+');" class="dot"><a href="#">'+searchEngineList[i].name_capitalized+'</a></li>');
+}
+$("#dot_0").addClass("current");
+$(".search_0").addClass("searchView");
+$(".search_0_i").focus();
+
 var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
-$('.searchContainer').bind(mousewheelevt, function(e){
+$('.searchContainer').bind(mousewheelevt, function(e) {
 
     var evt = window.event || e //equalize event object     
     evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
     var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
-
-	var search_0 = document.getElementById("search_0");
-	var search_1 = document.getElementById("search_1");
-	var search_2 = document.getElementById("search_2");
 
 	// p sure this aint optimal
     if(delta > 0) {
 		// Scroll up
 		prevSearch();
     }
-    else{
+    else {
 		// Scroll down
 		nextSearch();
-    }   
+    }
 });
 
 function prevSearch() {
-	if ($(".search_0").height() != 0) {
-		$(".search_0").removeClass("searchView");
-		$("#dot_0").removeClass("current");
-
-		$(".search_2").addClass("searchView");
-		$("#dot_2").addClass("current");
-		$(".search_2_i").focus();
-		return;
+	var newSearch = currentSearch-1;
+	if (newSearch<0) {
+		newSearch = maxSearch;
 	}
-	if ($(".search_1").height() != 0) {
-		$(".search_1").removeClass("searchView");
-		$("#dot_1").removeClass("current");
 
-		$(".search_0").addClass("searchView");
-		$("#dot_0").addClass("current");
-		$(".search_0_i").focus();
-		return;
-	}
-	if ($(".search_2").height() != 0) {
-		$(".search_2").removeClass("searchView");
-		$("#dot_2").removeClass("current");
+	$(".search_"+currentSearch).removeClass("searchView");
+	$("#dot_"+currentSearch).removeClass("current");
+	
+	$(".search_"+newSearch).addClass("searchView");
+	$("#dot_"+newSearch).addClass("current");
+	$(".search_"+newSearch+"_i").focus();
 
-		$(".search_1").addClass("searchView");
-		$("#dot_1").addClass("current");
-		$(".search_1_i").focus();
-		return;
-	}
+	currentSearch = newSearch;
 }
 function nextSearch() {
-	if ($(".search_0").height() != 0) {
-		$(".search_0").removeClass("searchView");
-		$("#dot_0").removeClass("current");
-
-		$(".search_1").addClass("searchView");
-		$("#dot_1").addClass("current");
-		$(".search_1_i").focus();
-		return;
+	var newSearch = currentSearch+1;
+	if (newSearch>maxSearch) {
+		newSearch = 0;
 	}
-	if ($(".search_1").height() != 0) {
-		$(".search_1").removeClass("searchView");
-		$("#dot_1").removeClass("current");
 
-		$(".search_2").addClass("searchView");
-		$("#dot_2").addClass("current");
-		$(".search_2_i").focus();
-		return;
-	}
-	if ($(".search_2").height() != 0) {
-		$(".search_2").removeClass("searchView");
-		$("#dot_2").removeClass("current");
+	$(".search_"+currentSearch).removeClass("searchView");
+	$("#dot_"+currentSearch).removeClass("current");
+	
+	$(".search_"+newSearch).addClass("searchView");
+	$("#dot_"+newSearch).addClass("current");
+	$(".search_"+newSearch+"_i").focus();
 
-		$(".search_0").addClass("searchView");
-		$("#dot_0").addClass("current");
-		$(".search_0_i").focus();
-		return;
-	}
+	currentSearch = newSearch;
 }
 
 function selectSearch(searchNr) {
-	switch (searchNr) {
-		case 0:
-			$(".search_0").addClass("searchView");
-			$("#dot_0").addClass("current");
+	$(".searchForm").removeClass("searchView");
+	$(".dot").removeClass("current");
+	
+	$(".search_"+searchNr).addClass("searchView");
+	$("#dot_"+searchNr).addClass("current");
+	$(".search_"+searchNr+"_i").focus();
 
-			$(".search_1").removeClass("searchView");
-			$(".search_2").removeClass("searchView");
-			$("#dot_1").removeClass("current");
-			$("#dot_2").removeClass("current");
-			//$(".search_0_i").focus();
-			break;
-		case 1:
-			$(".search_1").addClass("searchView");
-			$("#dot_1").addClass("current");
-
-			$(".search_0").removeClass("searchView");
-			$(".search_2").removeClass("searchView");
-			$("#dot_0").removeClass("current");
-			$("#dot_2").removeClass("current");
-			//$(".search_1_i").focus();
-			break;
-		case 2:
-			$(".search_2").addClass("searchView");
-			$("#dot_2").addClass("current");
-
-			$(".search_1").removeClass("searchView");
-			$(".search_0").removeClass("searchView");
-			$("#dot_1").removeClass("current");
-			$("#dot_0").removeClass("current");
-			//$(".search_2_i").focus();
-			break;
-	}
+	currentSearch = searchNr;
 }
 
 $('.searchContainer').on( 'mousewheel DOMMouseScroll', function ( e ) {

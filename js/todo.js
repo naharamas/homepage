@@ -1,12 +1,12 @@
-function populateTodo() {
-	var todo = localStorage.getItem("todo"); 
-	document.getElementById('todobox').innerHTML = todo;
+function loadTodo() {
+	var todo = localStorage.getItem(lsPrefix+"todo"); 
+	$("#todobox").html(todo);
 }
 
 function saveTodo(){
-	var todotext = $("#todobox").val(); 
-	localStorage.setItem("todo", todotext);
+	var todo = $("#todobox").val(); 
+	localStorage.setItem(lsPrefix+"todo", todo);
 }
 
-populateTodo();
-document.getElementById('todobox').onchange = function() { saveTodo() };
+loadTodo();
+$("#todobox").change(function() {saveTodo()});

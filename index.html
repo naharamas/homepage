@@ -10,16 +10,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="icon" sizes="512x512" href="img/ico.png">
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/html.sortable.js"></script>
-	<script src="js/moment-with-locales.min.js"></script>
-	<script src="js/rss.js"></script>
+	<script src="js/libs/jquery-3.3.1.js"></script>
+	<script src="js/libs/moment-with-en-fr-ja-locales.js"></script>
+	<script src="js/libs/rss.js"></script>
 	<!-- Replace FeedEk.js by FeedEX.js to use a local proxy(or whatever you set up in vars.js) instead of a third-party service -->
-	<script src="js/FeedEk.js"></script>
-	<script src="js/jquery.simplerWeather.min.js"></script>
-	<script src="js/suncalc.js"></script>
+	<script src="js/libs/FeedEk.js"></script>
+	<script src="js/libs/suncalc.js"></script>
+	<script src="js/libs/jquery.simplerWeather.js"></script>
+	<script src="js/libs/html.sortable.js"></script>
 </head>
 
 <body onresize="sizeCheck();">
@@ -37,7 +37,7 @@
 	
 	<div id="hiddenButtons">
 		<button class="nextBG" onclick="selectNextBackground();"></button>
-		<select class="themeSelector" onchange="changeTheme();"></select>
+		<select class="themeSelector" onchange="changeTheme($('.themeSelector option:selected').val());"></select>
         <button class="blurButton" style="cursor: pointer;" onclick="toggleBlur();">blur</p>
 	</div>
 	
@@ -52,22 +52,10 @@
 			</div>
 		</div>
 		<div class="searchContainer">
-			<form class="searchForm search_0 searchView" method="get" action="https://www.google.com/search">
-				<input class="searchBar search_0_i search_google" type="text" name="q" placeholder="Google" autofocus="autofocus" search_/>
-			</form>
-			<form class="searchForm search_1" method="get" action="https://youtube.com/results">
-				<input class="searchBar search_1_i search_youtube" type="text" name="search_query" placeholder="YouTube" search_/>
-			</form>
-			<form class="searchForm search_2" method="get" action="https://en.wikipedia.org/w/index.php">
-				<input class="searchBar search_2_i search_wikipedia" type="text" name="search" placeholder="Wikipedia" search_/>
-			</form>
+			<div id="searchFormContainer"></div>
 
 			<div class="dotstyle dotstyle-fillup">
-				<ul>
-					<li id="dot_0" onclick="selectSearch(0);" class="current" ><a href="#">Google</a></li>
-					<li id="dot_1" onclick="selectSearch(1);"><a href="#">YouTube</a></li>
-					<li id="dot_2" onclick="selectSearch(2);"><a href="#">Wikipedia</a></li>
-				</ul>
+				<ul id="searchDotList"></ul>
 			</div>
 		</div>
 
@@ -115,7 +103,7 @@
 </body>
 
 <!-- Afterload scripts -->
-<script src="js/vars.js"></script>
+<script src="js/config.js"></script>
 <script src="js/background.js"></script>
 <script src="js/search.js"></script>
 <script src="js/favboxes.js"></script>

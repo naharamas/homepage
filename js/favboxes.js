@@ -1,9 +1,9 @@
 if (typeof(Storage) !== "undefined") {
-    if (localStorage.getItem("favboxes") == null) {
-        localStorage.favboxes = JSON.stringify(defaultFavboxes);
+    if (localStorage.getItem(lsPrefix+"favboxes") == null) {
+        localStorage.setItem(lsPrefix+"favboxes", JSON.stringify(defaultFavboxes));
         console.log("No stored favboxes, faveboxes set to default.")
     }
-    var favboxes = JSON.parse(localStorage.getItem("favboxes"));
+    var favboxes = JSON.parse(localStorage.getItem(lsPrefix+"favboxes"));
 }
 else {
     console.log("No local storage available, faveboxes set to default.");
@@ -12,7 +12,7 @@ else {
 
 function reset() {
     // TODO: Add confirmation
-    localStorage.removeItem('favboxes');
+    localStorage.removeItem(lsPrefix+"favboxes");
     location.reload(true);
 }
 
@@ -72,12 +72,11 @@ function editOff() {
         favboxes["favbox"+i].items = [];
         $("#favbox"+i+" ul li a").each(function(index) {
             newFav = {link:$(this).attr('href'), label:$(this).text()};
-            console.log(index + " " + newFav);
             favboxes["favbox"+i].items.push(newFav); 
         });
     }
     sortable('.sortable', 'destroy');
-    localStorage.favboxes = JSON.stringify(favboxes);
+    localStorage.setItem(lsPrefix+"favboxes", JSON.stringify(favboxes));
     editMode = false;
 }
 

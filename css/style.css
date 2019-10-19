@@ -2,7 +2,13 @@
  *	Original code by Emily !66666666Ok (https://github.com/E66666666/homepage)
  *  Additions by Naharamas (https://github.com/naharamas/homepageDX)
  */
- 
+
+:root {
+  --box-bg-color: rgba(0, 0, 0, 0.5);
+  --box-bg-color-hover: rgba(0, 0, 0, 0.7);
+  --box-shadow-properties: 0px 8px 16px -8px rgba(0,0,0,0.75);
+}
+
 /*
  *	Sort of reset and general styling
  */
@@ -274,9 +280,8 @@ h1 {
 }
 
 .searchForm {
-	overflow: hidden;
-	transition: height 0.3s;
-	height: 0;
+	transition: height 3.3s;
+	display:none;
 }
 
 .searchBar {
@@ -292,18 +297,18 @@ h1 {
 	text-shadow: 0 0 0 white;
 	background-color: rgba(0, 0, 0, 0.5);
 	transition: background-color 0.3s;
+	box-shadow:  var(--box-shadow-properties);
 }
 .searchBar::placeholder {
 	text-shadow: none;
 }
 
-
 .searchBar:focus {
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 .searchView {
-	height: 32pt;
+	display: block;
 }
 
 /*
@@ -385,16 +390,17 @@ h1 {
 	margin: 5px;
 	float: left;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--box-bg-color);
 	transition: background-color 2s;
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(255, 255, 255, 0.1);
 	box-sizing: border-box;
+	box-shadow:  var(--box-shadow-properties);
 } 
 
 .d1x1:hover {
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: var(--box-bg-color-hover);
 	transition: background-color 1s;
 }
 
@@ -403,7 +409,7 @@ h1 {
 	width: 390px;
 	height: 190px;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--box-bg-color);
 	text-align: center;
 	margin: 5px;
 	transition: background-color 2s;
@@ -411,10 +417,11 @@ h1 {
 	border-width: 1px;
 	border-color: rgba(255, 255, 255, 0.1);
 	box-sizing: border-box;
+	box-shadow:  var(--box-shadow-properties);
 }
 
 .d2x1:hover {
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: var(--box-bg-color-hover);
 	transition: background-color 1s;
 }
 
@@ -460,17 +467,18 @@ div.d2x1Child .itemDate {
 	width: 790px;
 	height: 100%;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--box-bg-color);
 	margin: 5px;
 	transition: background-color 2s;
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(255, 255, 255, 0.2);
 	box-sizing: border-box;
+	box-shadow:  var(--box-shadow-properties);
 }
 
 .d4x2:hover {
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: var(--box-bg-color-hover);
 	transition: background-color 1s;
 }
 
